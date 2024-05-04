@@ -32,8 +32,10 @@ const paintNonImages = (element) => {
     }
   }
   let end = performance.now();
-  console.log("Time taken: ", end - start);
+  if (element.tagName === "BODY") {
+    console.log("Time taken: ", end - start);
+  }
 };
 
-// document.addEventListener("DOMContentLoaded", () => paintNonImages(body));
+document.addEventListener("DOMContentLoaded", () => paintNonImages(body));
 paintNonImages(body);
